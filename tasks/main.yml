@@ -1,0 +1,9 @@
+---
+- name: Make user
+  user:
+    name: "{{ user_name|default('rohan') }}"
+    append: yes
+    generate_ssh_key: yes
+    groups: wheel
+    uid: "{{ user_uid|default(8888) }}"
+  become: yes
